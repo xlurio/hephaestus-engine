@@ -1,0 +1,7 @@
+,ignorecollision,boundary,asteroid,bullet,player,default
+default,0,1,1,1,1,1
+player,0,1,1,0,0,
+bullet,0,1,1,0,,
+asteroid,0,0,0,,,
+boundary,1,0,,,,
+ignorecollision,0,,,,,

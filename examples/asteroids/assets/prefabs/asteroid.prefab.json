@@ -1,0 +1,50 @@
+{
+  "name": "Asteroid",
+  "layer": "asteroid",
+  "transform": {
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "scale": {
+      "x": 1,
+      "y": 1,
+      "z": 1
+    }
+  },
+  "components": [
+    {
+      "type": "SpriteRenderer",
+      "properties": {
+        "path": "assets/sprites/asteroid_0.png"
+      }
+    },
+    {
+      "type": "Rigidbody2D",
+      "properties": {
+        "mass": 1,
+        "drag": 0,
+        "angularDrag": 0,
+        "gravityScale": 0,
+        "constraints": {
+          "freezeRotation": true
+        }
+      }
+    },
+    {
+      "type": "BoxCollider2D"
+    },
+    {
+      "type": "Script",
+      "properties": {
+        "path": "assets/scripts/Asteroid.hpp"
+      }
+    }
+  ]
+}
