@@ -4,7 +4,9 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/include"
+                "${workspaceFolder}/include",
+                "${workspaceFolder}/external",
+                "${workspaceFolder}/external/nlohmann_json/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",

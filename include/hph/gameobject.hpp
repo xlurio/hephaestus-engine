@@ -6,24 +6,35 @@
 #include <sys/types.h>
 #include <string>
 #include "hphobject.hpp"
+#include <nlohmann/json.hpp>
+#include <hph/spriterenderer.hpp>
 
-class GameObject: public hph::HphObject
+class GameObject : public hph::HphObject
 {
 public:
     bool isActive;
 
-    std::vector<GameObject> findGameObjectsWithTag(std::string tag);
+    GameObject(nlohmann::json source) : mJsonSource(source) {}
+
+    std::vector<Component *> findGameObjectsWithTag(std::string tag)
+    {
+        return mComponents;
+    }
 
     void setLayer(uint newLayer)
     {
         layer = newLayer;
     }
 
-    bool compareTag(std::string tag);
+    bool compareTag(std::string tag) {
+        throw 1;
+    }
 
 private:
     uint layer;
-    std::vector<Component *> components;
+    std::vector<Component *> mComponents;
+    std::vector<SpriteRenderer> mRenderers;
+    nlohmann::json mJsonSource;
 };
 
 #endif
