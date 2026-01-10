@@ -27,6 +27,14 @@ public:
         return gameObjects;
     }
 
+    void loop() {
+        for (GameObject gameObject: mGameObjects) {
+            for (SpriteRenderer renderer: gameObject.getRenderers()) {
+                renderer.render(gameObject.getTransform());
+            }
+        }
+    }
+
 private:
     std::vector<GameObject> mGameObjects;
 };
