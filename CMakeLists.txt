@@ -13,5 +13,6 @@ add_executable(hph src/main.cpp external/glad/glad.c)
 include_directories(include external)
 
 find_package(OpenGL REQUIRED)
+find_package(glm CONFIG REQUIRED)
 
-target_link_libraries(hph SDL3::SDL3 OpenGL::GL nlohmann_json::nlohmann_json)
+target_link_libraries(hph SDL3::SDL3 OpenGL::GL nlohmann_json::nlohmann_json glm::glm)

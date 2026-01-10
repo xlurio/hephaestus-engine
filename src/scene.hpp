@@ -3,7 +3,6 @@
 
 #include <filesystem>
 #include <nlohmann/json.hpp>
-#include "spriterendereriterator.hpp"
 #include "gameobjectiterator.hpp"
 #include <hph/gameobject.hpp>
 #include <vector>
@@ -29,9 +28,7 @@ public:
 
     void loop() {
         for (GameObject gameObject: mGameObjects) {
-            for (SpriteRenderer renderer: gameObject.getRenderers()) {
-                renderer.render(gameObject.getTransform());
-            }
+            gameObject.render();
         }
     }
 

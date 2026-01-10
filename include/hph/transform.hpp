@@ -10,15 +10,15 @@ public:
     hph::Vector3 eulerAngles;
     hph::Vector3 localScale;
 
-    hph::Quaternion getRotation()
+    hph::Quaternion getRotation() const
     {
-        return rotation;
+        return mRotation;
     }
 
     hph::Vector3 getUp();
 
 private:
-    hph::Quaternion rotation;
+    hph::Quaternion mRotation;
 };
 
 #endif

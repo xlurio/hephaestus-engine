@@ -32,7 +32,11 @@ namespace hph
     public:
         using glm::quat::quat;
 
-        static hph::Quaternion sAngleAxis(float variance, hph::Vector3);
+        Quaternion(const glm::quat &v) : glm::quat(v) {}
+
+        static hph::Quaternion sAngleAxis(float variance, hph::Vector3) {
+            return glm::angleAxis(variance, glm::vec3(variance));
+        }
     };
 }
 

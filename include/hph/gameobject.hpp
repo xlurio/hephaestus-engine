@@ -37,7 +37,7 @@ public:
 
             if (componentSource["type"] == "SpriteRenderer")
             {
-                mRenderers.push_back(static_cast<SpriteRenderer &>(component));
+                mRenderer = static_cast<SpriteRenderer &>(component);
             }
         }
     }
@@ -59,18 +59,14 @@ public:
         throw 1;
     }
 
-    std::vector<SpriteRenderer> getRenderers() const {
-        return mRenderers;
-    }
-
-    Transform getTransform() const {
-        return mTransform;
+    void render() {
+        mRenderer.render(mTransform);
     }
 
 private:
     uint mLayer;
     std::vector<Component *> mComponents;
-    std::vector<SpriteRenderer> mRenderers;
+    SpriteRenderer mRenderer;
     Transform mTransform;
 };
 
